@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <style>
+            body{
+                width:100%;
+                background-color:black;
+                position: relative;
+
+            }
+            .container{
+                position:absolute;
+                top:20%;
+                left:30%;
+                
+                width:350px;
+                padding:25px 35px;
+                background-color: white;
+            }
+            h1{
+                text-align: center;
+            }
+            input{
+                width:300px;
+                height:45px;
+                border-radius:10px;
+                cursor: pointer;
+                padding-left:5px;
+                
+            }
+            
+            button{
+                width:300px;
+                height:45px;
+                border-radius: 10px;
+                background-color:rgb(27, 27, 231);
+                cursor: pointer;
+                color:white;
+            }
+            #imagc{
+                width:150px;
+                border-radius: 5px;
+                max-height:0px;
+                overflow: hidden;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                margin-left:60px;
+                margin-bottom: 15px;
+                transition:max-height 1s;
+            }
+            #imagc.showimg{
+                max-height: 320px;
+                border:1px dotted wheat;
+
+            }
+            .error{
+                animation:shake 0.1s linear 10;
+            }
+            @keyframes shake{
+                0% {
+                    transform:translateX(0);
+                }
+                25% {
+                    transform:translateX(-2px);
+                }
+                50% {
+                    transform:translateX(0);
+                }
+                75% {
+                    transform:translateX(2px);
+                }
+                100% {
+                    transform:translateX(0);
+                }
+            }
+
+            
+          
+           
+
+           
+
+           
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Qrcode generator</h1>
+            <input type="text" placeholder="text/url" id="code1"><br><br>
+            <div id="imagc">
+            <img src="" id="image1"><br><br>
+            </div>
+
+            <button onclick="generator()">generate</button>
+            
+
+        </div>
+        <script>
+            var code1=document.getElementById("code1");
+            var imagc=document.getElementById("imagc");
+            var image1=document.getElementById("image1");
+            function generator(){
+                if(code1.value.length>0){
+                image1.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+code1.value;
+                imagc.classList.add("showimg")}
+                else{
+                    code1.classList.add("error");
+                    setTimeout(()=>{
+                        code1.classList.remove("error");
+                   
+                },1000);
+
+                }
+
+            }
+
+        </script>
+    </body>
+</html>
