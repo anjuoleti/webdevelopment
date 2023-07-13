@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <style>
+            body{
+                background:url(https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+                background-position:center;
+                background-size:cover;
+                
+
+                
+            }
+            .container{
+                width:350px;
+                height: 70vh;
+                position:relative;
+                top: 120px;
+                left:450px;
+                background-color:white;
+                overflow: hidden;
+                
+            
+            }
+            .oleti{
+               width:200px;
+               height:40px;
+                position: relative;
+                top:20px;
+                left:80px;
+                border-radius: 20px;
+                background-color: antiquewhite;
+            }
+            p{
+                text-align: center;
+                font-size: 35px;
+                margin-top:10px;
+                margin-bottom:-20px;
+                color:orangered;
+                text-shadow: 5px 5px 5px rgb(188, 97, 63);
+            }
+            h3{
+                text-align: center;
+                font-style: italic;
+                color:rgb(124, 56, 31);
+                
+            }
+            .image img{
+                width:200px;
+                height:200px;
+                position:relative;
+                left:70px;
+                border-radius:50%;
+
+
+            }
+            label{
+                display: block;
+                background:linear-gradient(to right,rgb(235, 101, 49),rgb(145, 43, 6));
+                
+                width:140px;
+                height:40px;
+                margin-left:100px;
+                border-radius:30px;
+                text-align: center;
+                padding-top: 15px;
+                
+            }
+            input{
+                display:none;
+            }
+           
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="image">
+                <p>sai kartheek</p>
+                <h3>@nskchowdary</h3>
+                <img src="https://pluspng.com/img-png/user-png-icon-download-icons-logos-emojis-users-2240.png" id="inputimage"><br><br>
+                <label for="file1">update image</label>
+                <input type="file" accept="image/jpeg,image/png,image/png" id="file1">
+
+            </div>
+            
+            </div>
+            <script>
+                var inputimage1=document.getElementById("inputimage");
+                var file2=document.getElementById("file1");
+                file2.onchange=function(){
+                    inputimage1.src=URL.createObjectURL(file2.files[0]);
+                }
+            </script>
+            
+    </body>
+</html>
