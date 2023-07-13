@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <style>
+            body{
+                width:100%;
+                background:url(https://images.pexels.com/photos/707915/pexels-photo-707915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+                background-position:center;
+                background-size:cover;
+                position: relative;
+            }
+            .watch{
+                position:absolute;
+                top:120px;
+                left:380px;
+                width:450px;
+                height:55vh;
+                background:linear-gradient(to right,rgba(119, 126, 119, 0.8),rgba(72, 107, 72, 0.8)),url(https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+                background-position:center;
+                background-size: cover;
+
+            }
+            img{
+                
+                width:70px;
+                height:50px;
+            }
+            .images{
+                position: relative;
+                top:70px;
+                
+                display:flex;
+                justify-content:space-around;
+            }
+            h1{
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 70px;
+                color:black;
+                text-shadow:5px 5px 5px green;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="watch">
+            <h1 id="display1">00:00:00</h1>
+            <div class="images">
+            <img src="https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-stop-icon-for-your-design-websites-and-projects-png-image_1820050.jpg"  onclick="stop1()">
+            <img src="https://cdn-icons-png.flaticon.com/512/9581/9581128.png"  onclick="start1()">
+            <img src="https://img.icons8.com/external-sbts2018-flat-sbts2018/512/external-reset-basic-ui-elements-2.2-sbts2018-flat-sbts2018.png" onclick="reset1()">
+            </div>
+
+
+
+        </div>
+        <script>
+            var [seconds,minutes,hours]=[0,0,0];
+            var display1=document.getElementById("display1");
+            var timer;
+            function stopwatch(){
+                seconds++;
+                if(seconds==60)
+                {seconds=0;
+                    minutes++;
+                    if(minutes==60)
+                    {minutes=0;
+                        hours++;
+                    }
+                }
+                h=hours<10?"0"+hours:hours;
+                s=seconds<10?"0"+seconds:seconds;
+                m=minutes<10?"0"+minutes:minutes;
+                display1.innerHTML=h+":"+m+":"+s;
+            }
+            function start1(){
+                if(timer!=0){
+                    clearInterval(timer);
+                    
+                }
+                
+                timer=setInterval(stopwatch,1000);
+                
+
+            }
+            function stop1(){
+                clearInterval(timer);
+                
+                
+            }
+            function reset1(){
+                clearInterval(timer);
+                [seconds,minutes,hours]=[0,0,0];
+            }
+
+        </script>
+    </body>
+    
+</html>
