@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <style>
+            body{
+                background:url(https://tse4.mm.bing.net/th?id=OIP.HxV79tFMPfBAIo0BBF-sOgHaEy&pid=Api&P=0);
+                background-position:center;
+                background-size:cover;
+                
+
+                
+            }
+            .container{
+                width:350px;
+                height: 70vh;
+                position:relative;
+                top: 120px;
+                left:400px;
+                background-color:white;
+                overflow: hidden;
+            
+            }
+            .oleti{
+               width:200px;
+               height:40px;
+                position: relative;
+                top:20px;
+                left:80px;
+                border-radius: 20px;
+                background-color: antiquewhite;
+            }
+            #toggle{
+                padding-left:10px;
+                width:95px;
+                height:40px;
+                border:0;
+                outline:none;
+                
+                text-align: center;
+                color:black;
+                background:transparent;
+                position: relative;
+                
+            }
+            #anju{
+                position: absolute;
+                width:95px;
+                height:100%;
+               
+                background:linear-gradient(to right, rgb(72, 148, 179),rgb(14, 111, 149));
+                border-radius: 20px;
+                
+                
+            }
+            form{
+                position: absolute;
+                top: 80px;
+                left:100px;
+                
+            }
+            .box{
+                height: 30px;
+                border:0;
+                outline:none;
+                border-bottom: 1px solid black;
+                background:transparent;
+                
+            }
+            p{
+                margin-left:10px;
+                font-size:40px;
+                color: rgb(15, 57, 74);
+            }
+            button{
+                width:150px;
+                height:30px;
+                background:linear-gradient(to right, rgb(72, 148, 179),rgb(14, 111, 149));
+                border-radius:20px;
+
+            }
+            #form2{
+                left:450px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="oleti">
+            <div id="anju"></div>
+            <button type="button" id="toggle">login</button>
+            <button type="button" id="toggle">register</button>
+            </div>
+            <form id="form1">
+   
+   
+   
+                <p>login form</p>
+                
+                <div><input type="text" class="box" placeholder="enter name"></div><br>
+              <div><input type="password" class="box" placeholder="password"></div><br>
+               <div> <input type="password" class="box" placeholder="confirm"></div><br>
+              <div class="sai">
+                <button type="button" id="next1">login</button>
+              
+               </div>
+               
+              </form>
+              <form id="form2">
+   
+   
+   
+                <p>registration</p>
+                
+                <div><input type="text" class="box" placeholder="enter loginid"></div><br>
+              <div><input type="password" class="box" placeholder="password"></div><br>
+               <div> <input type="password" class="box" placeholder="confirm password"></div><br>
+              <div class="sai">
+                <button type="button" id="next2">register</button>
+              
+               </div>
+               
+              </form>
+            
+            
+        </div>
+        <script>
+            var next1=document.getElementById("next1");
+            var next2=document.getElementById("next2");
+            var anju=document.getElementById("anju");
+            next1.onclick=function(){
+                form1.style.left="-350px";
+                form2.style.left="90px";
+                anju.style.width="200px";
+            }
+            next2.onclick=function(){
+                form1.style.left="90px";
+                form2.style.left="-350px";
+                anju.style.width="100px";
+            }
+        </script>
+    </body>
+</html>
